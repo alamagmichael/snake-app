@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A modern Snake game with 30 escalating levels, handcrafted obstacles, and neon visuals." />
+    <title>Neon Snake: 30 Levels</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-panel" aria-labelledby="game-title">
+        <div>
+          <p class="eyebrow">Arcade campaign</p>
+          <h1 id="game-title">Neon Snake</h1>
+          <p class="hero-copy">Master 30 handcrafted levels with portals, obstacle mazes, faster speeds, and bite-sized objectives.</p>
+        </div>
+        <div class="hero-stats" aria-label="Current game stats">
+          <article>
+            <span>Level</span>
+            <strong id="levelDisplay">1 / 30</strong>
+          </article>
+          <article>
+            <span>Score</span>
+            <strong id="scoreDisplay">0</strong>
+          </article>
+          <article>
+            <span>Target</span>
+            <strong id="targetDisplay">5</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="game-layout">
+        <aside class="control-card">
+          <div class="level-card">
+            <p class="eyebrow">Current mission</p>
+            <h2 id="levelName">Pulse Garden</h2>
+            <p id="levelDescription">Warm up by collecting neon fruit in an open arena.</p>
+          </div>
+
+          <div class="progress-wrap">
+            <div class="progress-label">
+              <span>Level progress</span>
+              <strong id="progressText">0 / 5</strong>
+            </div>
+            <div class="progress-track" aria-hidden="true">
+              <div id="progressFill" class="progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="button-grid" aria-label="Game controls">
+            <button id="startButton" type="button">Start</button>
+            <button id="pauseButton" type="button">Pause</button>
+            <button id="restartButton" type="button">Restart</button>
+            <button id="nextButton" type="button">Next Level</button>
+          </div>
+
+          <div class="tips">
+            <h3>How to play</h3>
+            <ul>
+              <li>Move with arrow keys, WASD, or the on-screen pad.</li>
+              <li>Eat the glowing fruit to reach the target for each level.</li>
+              <li>Avoid walls, obstacles, and your own tail.</li>
+            </ul>
+          </div>
+        </aside>
+
+        <section class="arena-card" aria-label="Snake game arena">
+          <div class="canvas-wrap">
+            <canvas id="gameCanvas" width="720" height="720" aria-label="Neon Snake game board"></canvas>
+            <div id="messageOverlay" class="message-overlay">
+              <strong>Ready?</strong>
+              <span>Press Start or Space to begin Level 1.</span>
+            </div>
+          </div>
+
+          <div class="mobile-pad" aria-label="Touch movement controls">
+            <button type="button" data-direction="up" aria-label="Move up">↑</button>
+            <button type="button" data-direction="left" aria-label="Move left">←</button>
+            <button type="button" data-direction="down" aria-label="Move down">↓</button>
+            <button type="button" data-direction="right" aria-label="Move right">→</button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="src/game.js"></script>
+  </body>
+</html>
